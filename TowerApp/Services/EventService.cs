@@ -12,7 +12,14 @@ namespace TowerApp.Services
     public class EventService
     {
         private readonly EventsRepository _eventsrepo;
-
+        public EventService(EventsRepository eventsrepo)
+        {
+            _eventsrepo = eventsrepo;
+        }
+        public IEnumerable<TowerEvent> getAllEvents()
+        {
+            return _repo.getAllEvents();
+        }
     }
 
 }

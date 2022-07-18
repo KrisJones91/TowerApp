@@ -20,5 +20,19 @@ namespace TowerApp.Controllers
         {
             _eventService = eventService;
         }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult<TowerEvent>> GetAllEvents()
+        {
+            try
+            {
+                return Ok(_eventService.GetAllEvents());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

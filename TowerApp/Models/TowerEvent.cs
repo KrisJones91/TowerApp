@@ -1,6 +1,6 @@
 namespace TowerApp.Models
 {
-    public class Event
+    public class TowerEvent
     {
         public string Id { get; set; }
         public string Title { get; set; }

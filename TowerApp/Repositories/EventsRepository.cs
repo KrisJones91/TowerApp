@@ -11,5 +11,11 @@ namespace TowerApp.Repositories
             _db = db;
         }
 
+        public IEnumerable<TowerEvent> getAllEvents()
+        {
+            string sql = "SELECT * FROM towerevents";
+            return _db.Query<TowerEvent>(sql);
+        }
+
     }
 }
