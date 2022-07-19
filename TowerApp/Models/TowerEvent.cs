@@ -9,7 +9,7 @@ namespace TowerApp.Models
         public int Tickets { get; set; }
         public string Type { get; set; }
         public string Location { get; set; }
-        public string Price { get; set; }
+        public int Price { get; set; }
         public string Status { get; set; }
 
     }
