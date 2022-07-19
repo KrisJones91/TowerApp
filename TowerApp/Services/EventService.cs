@@ -1,4 +1,6 @@
 using TowerApp.Repositories;
+using System.Collections.Generic;
+using TowerApp.Models;
 namespace TowerApp.Services
 {
     public class EventService
@@ -7,6 +9,10 @@ namespace TowerApp.Services
         public EventService(EventsRepository repo)
         {
             _repo = repo;
+        }
+        public IEnumerable<TowerEvent> getAllEvents()
+        {
+            return _repo.getAllEvents();
         }
     }
 }
