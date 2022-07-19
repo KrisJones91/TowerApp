@@ -14,5 +14,16 @@ namespace TowerApp.Services
         {
             return _repo.getAllEvents();
         }
+
+        public TowerEvent getEventById(int id)
+        {
+            return _repo.getEventById(id);
+        }
+
+        public TowerEvent createEvent(TowerEvent towerEvent)
+        {
+            return _repo.createEvent(towerEvent);
+        }
+
     }
 }

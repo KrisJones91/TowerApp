@@ -29,5 +29,32 @@ namespace TowerApp.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("{id}")]
+
+        public ActionResult<TowerEvent> getEventById(int id)
+        {
+            try
+            {
+                return Ok(_eventService.getEventById(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult<TowerEvent> createEvent([FromBody] TowerEvent towerEvent)
+        {
+            try
+            {
+                return Ok(_eventService.createEvent(towerEvent));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }
