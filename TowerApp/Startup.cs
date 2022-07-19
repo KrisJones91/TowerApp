@@ -39,9 +39,16 @@ namespace TowerApp
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TowerApp", Version = "v1" });
             });
             services.AddScoped<IDbConnection>(x => CreateDbConnection());
-            
-            services.AddScoped<AccountsRepository>();
+
+
+            //Services
             services.AddScoped<AccountService>();
+            services.AddScoped<EventService>();
+
+            // Repositories
+            services.AddScoped<AccountsRepository>();
+            services.AddScoped<EventsRepository>();
+
         }
 
         private void ConfigureCors(IServiceCollection services)

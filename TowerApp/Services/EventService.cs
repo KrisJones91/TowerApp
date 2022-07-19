@@ -1,25 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using TowerApp.Models;
-using TowerApp.Services;
-using CodeWorks.Auth0Provider;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-
+using TowerApp.Repositories;
 namespace TowerApp.Services
 {
     public class EventService
     {
-        private readonly EventsRepository _eventsrepo;
-        public EventService(EventsRepository eventsrepo)
+        private readonly EventsRepository _repo;
+        public EventService(EventsRepository repo)
         {
-            _eventsrepo = eventsrepo;
-        }
-        public IEnumerable<TowerEvent> getAllEvents()
-        {
-            return _repo.getAllEvents();
+            _repo = repo;
         }
     }
-
 }
