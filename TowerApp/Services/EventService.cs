@@ -25,5 +25,9 @@ namespace TowerApp.Services
             return _repo.createEvent(towerEvent);
         }
 
+        internal IEnumerable<TowerEvent> GetByProfileId(string id)
+        {
+            return _repo.GetByOwnerId(id);
+        }
     }
 }
