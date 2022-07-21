@@ -5,8 +5,9 @@ import { api } from './AxiosService'
 class AccountService {
   async getAccount() {
     try {
-      const res = await api.get('/account')
+      const res = await api.get('/Account')
       AppState.account = res.data
+      logger.log("account data", res.data)
     } catch (err) {
       logger.error('HAVE YOU STARTED YOUR SERVER YET???', err)
     }

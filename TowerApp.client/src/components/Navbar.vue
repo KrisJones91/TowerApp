@@ -21,13 +21,13 @@
         <li>
           <router-link
             :to="{ name: 'About' }"
-            class="btn text-success lighten-30 selectable text-uppercase"
+            class="btn text-light lighten-30 selectable text-uppercase"
           >
             About
           </router-link>
         </li>
       </ul>
-      <!-- LOGIN COMPONENT HERE -->
+      <!-- LOGIN COMPONENT BEGIN -->
             <span class="navbar-text">
         <button
           class="btn btn-outline-primary text-uppercase"
@@ -37,18 +37,18 @@
           Login
         </button>
 
-        <div class="dropdown" v-else>
+        <div class="username dropdown" v-else>
           <div
-            class="dropdown-toggle"
+            class=" dropdown-toggle"
             @click="state.dropOpen = !state.dropOpen"
           >
             <img
               :src="user.picture"
               alt="user photo"
               height="40"
-              class="rounded"
+              class="mx-3 rounded"
             />
-            <span class="mx-3" style="font-family: 'Kanit', sans-serif;">{{ user.name }}</span>
+            <span class="mx-1 " style="font-family: 'Kanit', sans-serif;">{{ user.name }}</span>
           </div>
           <div
             class="dropdown-menu p-0 list-group w-100"
@@ -69,7 +69,7 @@
           </div>
         </div>
       </span>
-      <!-- <Login /> -->
+      <!-- < LOGIN COMPONENT END /> -->
     </div>
   </nav>
 </template>
@@ -98,8 +98,23 @@ export default {
 </script>
 
 <style scoped>
+.dropdown-menu {
+  user-select: none;
+  display: block;
+  transform: scale(0);
+  transition: all 0.15s linear;
+}
+.dropdown-menu.show {
+  transform: scale(1);
+}
+.username:hover
+{
+  color: var(--bs-success);
+  cursor: pointer;
+}
 a:hover {
   text-decoration: none;
+
 }
 .nav-link {
   text-transform: uppercase;
